@@ -4472,6 +4472,7 @@ IndexArray	modules/simu/simuv2/SOLID-2.0/src/IndexArray.h	/^  IndexArray(int n, 
 IndexArray	modules/simu/simuv2/SOLID-2.0/src/IndexArray.h	/^class IndexArray {$/;"	c
 IndexBuf	modules/simu/simuv2/SOLID-2.0/src/C-api.cpp	/^typedef vector<unsigned int> IndexBuf;$/;"	t	file:
 IndexBuf	modules/simu/simuv2/SOLID-2.0/src/Polyhedron.cpp	/^typedef vector<unsigned int> IndexBuf;$/;"	t	file:
+InitFuncPt	drivers/andypassion/andypassion.cpp	/^InitFuncPt(int index, void *pt) $/;"	f	file:
 InitFuncPt	drivers/berniw/berniw.cpp	/^static int InitFuncPt(int index, void *pt)$/;"	f	file:
 InitFuncPt	drivers/berniw2/berniw2.cpp	/^static int InitFuncPt(int index, void *pt)$/;"	f	file:
 InitFuncPt	drivers/berniw3/berniw3.cpp	/^static int InitFuncPt(int index, void *pt)$/;"	f	file:
@@ -5016,6 +5017,7 @@ MM_SCT_SOUND	libs/musicplayer/musicplayer.h	24;"	d
 MM_SOUND_PARM_CFG	libs/musicplayer/musicplayer.h	23;"	d
 MM_VAL_SOUND_DISABLED	libs/musicplayer/musicplayer.h	27;"	d
 MM_VAL_SOUND_ENABLED	libs/musicplayer/musicplayer.h	26;"	d
+MODULE	drivers/andypassion/Makefile	/^MODULE      = ${ROBOT}.so$/;"	m
 MODULE	drivers/berniw/Makefile	/^MODULE = ${ROBOT}.so$/;"	m
 MODULE	drivers/berniw2/Makefile	/^MODULE = ${ROBOT}.so$/;"	m
 MODULE	drivers/berniw3/Makefile	/^MODULE = ${ROBOT}.so$/;"	m
@@ -5033,6 +5035,7 @@ MODULE	modules/simu/simuv2/Makefile	/^MODULE		= simuv2.so$/;"	m
 MODULE	modules/simu/simuv3/Makefile	/^MODULE		= simuv3.so$/;"	m
 MODULE	modules/telemetry/Makefile	/^MODULE    = telemetry.so$/;"	m
 MODULE	modules/track/Makefile	/^MODULE    = track.so$/;"	m
+MODULEDIR	drivers/andypassion/Makefile	/^MODULEDIR   = drivers\/${ROBOT}$/;"	m
 MODULEDIR	drivers/berniw/Makefile	/^MODULEDIR = drivers\/${ROBOT}$/;"	m
 MODULEDIR	drivers/berniw2/Makefile	/^MODULEDIR = drivers\/${ROBOT}$/;"	m
 MODULEDIR	drivers/berniw3/Makefile	/^MODULEDIR = drivers\/${ROBOT}$/;"	m
@@ -6706,6 +6709,7 @@ PIT_STATE_PIT_EXIT	drivers/inferno2/common.h	58;"	d
 PIT_TOP	tools/trackgen/track.cpp	2363;"	d	file:
 PKGSUBDIRS	Makefile	/^PKGSUBDIRS	= interfaces libs linux modules windows tools drivers doc raceman$/;"	m
 PKGSUBDIRS	drivers/Makefile	/^PKGSUBDIRS	= $(SUBDIRS)$/;"	m
+PKGSUBDIRS	drivers/andypassion/Makefile	/^PKGSUBDIRS  = ${SHIPSUBDIRS}$/;"	m
 PKGSUBDIRS	drivers/berniw/Makefile	/^PKGSUBDIRS	= $(SHIPSUBDIRS)$/;"	m
 PKGSUBDIRS	drivers/berniw2/Makefile	/^PKGSUBDIRS	= $(SHIPSUBDIRS)$/;"	m
 PKGSUBDIRS	drivers/berniw3/Makefile	/^PKGSUBDIRS	= $(SHIPSUBDIRS)$/;"	m
@@ -7686,6 +7690,7 @@ RM_VAL_RACECONF	interfaces/raceman.h	276;"	d
 RM_VAL_TRACKSEL	interfaces/raceman.h	274;"	d
 RM_VAL_VISIBLE	interfaces/raceman.h	291;"	d
 RM_VAL_YES	interfaces/raceman.h	288;"	d
+ROBOT	drivers/andypassion/Makefile	/^ROBOT       = andypassion$/;"	m
 ROBOT	drivers/berniw/1/Makefile	/^ROBOT = berniw$/;"	m
 ROBOT	drivers/berniw/10/Makefile	/^ROBOT = berniw$/;"	m
 ROBOT	drivers/berniw/2/Makefile	/^ROBOT = berniw$/;"	m
@@ -8165,6 +8170,7 @@ SHIFT_MARGIN	drivers/sparkle/driver.cpp	/^const float Driver::SHIFT_MARGIN = 4.0
 SHIFT_MARGIN	drivers/sparkle/driver.h	/^		static const float SHIFT_MARGIN;$/;"	m	class:Driver
 SHIFT_MARGIN	drivers/tita/mycar.cpp	/^const double MyCar::SHIFT_MARGIN = 4.0;				\/\/ [m\/s].$/;"	m	class:MyCar	file:
 SHIFT_MARGIN	drivers/tita/mycar.h	/^		static const double SHIFT_MARGIN;			\/\/ [m\/s].$/;"	m	class:MyCar
+SHIP	drivers/andypassion/Makefile	/^SHIP        = ${ROBOT}.xml acura-nsx-sz.rgb logo.rgb$/;"	m
 SHIP	drivers/berniw/1/Makefile	/^SHIP      = car1-stock1.rgb $(shell find *.xml -maxdepth 0 -type f -print)$/;"	m
 SHIP	drivers/berniw/10/Makefile	/^SHIP      = car1-trb3.rgb $(shell find *.xml -maxdepth 0 -type f -print)$/;"	m
 SHIP	drivers/berniw/2/Makefile	/^SHIP      = car1-stock1.rgb $(shell find *.xml -maxdepth 0 -type f -print)$/;"	m
@@ -8292,6 +8298,7 @@ SHIP	modules/graphic/ssggraph/Makefile	/^SHIP      = graph.xml sound.xml$/;"	m
 SHIP	modules/telemetry/Makefile	/^SHIP      = telemetry.sh$/;"	m
 SHIP	raceman/Makefile	/^SHIP      = $(shell find * -maxdepth 0 -name '*.xml' -print)$/;"	m
 SHIPCREATEDIRS	raceman/Makefile	/^SHIPCREATEDIRS = $(shell find * -maxdepth 0 -name '*.xml' -print | sed -e 's!\\.xml!!' -e 's!^!results\/!')$/;"	m
+SHIPDIR	drivers/andypassion/Makefile	/^SHIPDIR     = drivers\/${ROBOT}$/;"	m
 SHIPDIR	drivers/berniw/1/Makefile	/^SHIPDIR   = drivers\/${ROBOT}\/1$/;"	m
 SHIPDIR	drivers/berniw/10/Makefile	/^SHIPDIR   = drivers\/${ROBOT}\/10$/;"	m
 SHIPDIR	drivers/berniw/2/Makefile	/^SHIPDIR   = drivers\/${ROBOT}\/2$/;"	m
@@ -8420,6 +8427,7 @@ SHIPDIR	modules/telemetry/Makefile	/^SHIPDIR   = telemetry$/;"	m
 SHIPDIR	raceman/Makefile	/^SHIPDIR   = config\/raceman$/;"	m
 SHIPSUBDIRS	Makefile	/^SHIPSUBDIRS	= drivers modules libs raceman$/;"	m
 SHIPSUBDIRS	drivers/Makefile	/^SHIPSUBDIRS = $(SUBDIRS)$/;"	m
+SHIPSUBDIRS	drivers/andypassion/Makefile	/^SHIPSUBDIRS = $/;"	m
 SHIPSUBDIRS	drivers/berniw/Makefile	/^SHIPSUBDIRS = 1 2 3 4 5 6 7 8 9 10$/;"	m
 SHIPSUBDIRS	drivers/berniw2/Makefile	/^SHIPSUBDIRS = 1 2 3 4 5 6 7 8 9 10$/;"	m
 SHIPSUBDIRS	drivers/berniw3/Makefile	/^SHIPSUBDIRS = 1 2 3 4 5 6 7 8 9 10$/;"	m
@@ -8614,6 +8622,7 @@ SOLIBS	tools/trackgen/Makefile	/^SOLIBS       	= -ltgf -ltgfclient -lmusicplayer
 SOUND_DEFINES_H	modules/graphic/ssggraph/sound_defines.h	2;"	d
 SOUND_INTERFACE_H	modules/graphic/ssggraph/SoundInterface.h	21;"	d
 SOUND_LOG	modules/graphic/ssggraph/SoundInterface.h	25;"	d
+SOURCES	drivers/andypassion/Makefile	/^SOURCES     = ${ROBOT}.cpp$/;"	m
 SOURCES	drivers/berniw/Makefile	/^SOURCES   = ${ROBOT}.cpp spline.cpp trackdesc.cpp pathfinder.cpp mycar.cpp$/;"	m
 SOURCES	drivers/berniw2/Makefile	/^SOURCES   = ${ROBOT}.cpp spline.cpp trackdesc.cpp pathfinder.cpp mycar.cpp$/;"	m
 SOURCES	drivers/berniw3/Makefile	/^SOURCES   = ${ROBOT}.cpp spline.cpp trackdesc.cpp pathfinder.cpp mycar.cpp$/;"	m
@@ -11044,6 +11053,7 @@ ambient	windows/include/plib/ssg.h	/^  sgVec4 ambient ;$/;"	m	class:ssgLight
 ambient_colour	windows/include/plib/ssg.h	/^  sgVec4  ambient_colour ;$/;"	m	class:ssgSimpleState
 amount_left	windows/include/plib/sl.h	/^  int amount_left ;$/;"	m	class:slScheduler
 analysisp	windows/include/vorbis/codec.h	/^  int analysisp;$/;"	m	struct:vorbis_dsp_state
+andypassion	drivers/andypassion/andypassion.cpp	/^andypassion(tModInfo *modInfo) $/;"	f
 angle	drivers/bt/cardata.h	/^		float angle;		\/\/ The angle of the car relative to the track tangent.$/;"	m	class:SingleCardata
 angle	drivers/damned/cardata.h	/^		float angle;		\/\/ The angle of the car relative to the track tangent.$/;"	m	class:SingleCardata
 angle	drivers/olethros/TrackData.h	/^    float angle;$/;"	m	class:TrackData
@@ -11912,6 +11922,7 @@ curSection	libs/tgf/params.cpp	/^	struct section *curSection;$/;"	m	struct:parmO
 curSubSection	libs/tgf/params.cpp	/^    struct section			*curSubSection;$/;"	m	struct:section	typeref:struct:section::section	file:
 curTime	interfaces/car.h	/^    double		curTime;$/;"	m	struct:__anon59
 curTime	interfaces/raceman.h	/^    double		curTime;$/;"	m	struct:__anon70
+curTrack	drivers/andypassion/andypassion.cpp	/^static tTrack	*curTrack;$/;"	v	file:
 curTrack	drivers/human/human.cpp	/^static tTrack	*curTrack;$/;"	v	file:
 curVInit	libs/tgfclient/screen.cpp	/^static int curVInit = 0;$/;"	v	file:
 curVersion	libs/confscreens/simuconfig.cpp	/^static int curVersion = 0;$/;"	v	file:
@@ -12476,6 +12487,7 @@ draw_geometry_array	modules/graphic/ssggraph/grvtxtable.cpp	/^void grVtxTable::d
 draw_geometry_for_a_car	modules/graphic/ssggraph/grvtxtable.cpp	/^void grVtxTable::draw_geometry_for_a_car ()$/;"	f	class:grVtxTable
 draw_geometry_for_a_car_array	modules/graphic/ssggraph/grvtxtable.cpp	/^void grVtxTable::draw_geometry_for_a_car_array ()$/;"	f	class:grVtxTable
 draw_geometry_multi	modules/graphic/ssggraph/grvtxtable.cpp	/^void grVtxTable::draw_geometry_multi ()$/;"	f	class:grVtxTable
+drive	drivers/andypassion/andypassion.cpp	/^drive(int index, tCarElt* car, tSituation *s) $/;"	f	file:
 drive	drivers/berniw/berniw.cpp	/^static void drive(int index, tCarElt* car, tSituation *situation)$/;"	f	file:
 drive	drivers/berniw2/berniw2.cpp	/^static void drive(int index, tCarElt* car, tSituation *situation)$/;"	f	file:
 drive	drivers/berniw3/berniw3.cpp	/^static void drive(int index, tCarElt* car, tSituation *situation)$/;"	f	file:
@@ -12690,6 +12702,7 @@ endid	drivers/lliaw/pathfinder.h	/^		int endid;			\/\/ Id of last pit Segment.$/
 endid	drivers/tita/pathfinder.h	/^		int endid;			\/\/ Id of last pit Segment.$/;"	m	class:PathSegPit
 endofprog	libs/client/exitmenu.cpp	/^endofprog(void * \/* dummy *\/)$/;"	f	file:
 endpointList	modules/simu/simuv2/SOLID-2.0/src/Endpoint.cpp	/^static EndpointList endpointList[3];$/;"	v	file:
+endrace	drivers/andypassion/andypassion.cpp	/^endrace(int index, tCarElt *car, tSituation *s)$/;"	f	file:
 eng_pri	modules/graphic/ssggraph/CarSoundData.h	/^	SoundPri eng_pri;$/;"	m	class:CarSoundData
 engine	modules/graphic/ssggraph/CarSoundData.h	/^	QSoundChar engine;$/;"	m	class:CarSoundData
 engine	modules/simu/simuv2/carstruct.h	/^    tEngine		engine;$/;"	m	struct:__anon165
@@ -14547,6 +14560,7 @@ initTireMu	drivers/bt/driver.cpp	/^void Driver::initTireMu()$/;"	f	class:Driver
 initTireMu	drivers/damned/driver.cpp	/^void Driver::initTireMu()$/;"	f	class:Driver
 initTireMu	drivers/olethros/driver.cpp	/^    void Driver::initTireMu()$/;"	f	class:olethros::Driver
 initTireMu	drivers/sparkle/driver.cpp	/^void Driver::initTireMu()$/;"	f	class:Driver
+initTrack	drivers/andypassion/andypassion.cpp	/^initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSituation *s) $/;"	f	file:
 initTrack	drivers/berniw/berniw.cpp	/^static void initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSituation * situation)$/;"	f	file:
 initTrack	drivers/berniw2/berniw2.cpp	/^static void initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSituation * situation)$/;"	f	file:
 initTrack	drivers/berniw3/berniw3.cpp	/^static void initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSituation * situation)$/;"	f	file:
@@ -15606,6 +15620,7 @@ new_node	tools/trackgen/easymesh.cpp	/^void new_node()$/;"	f
 new_numb	tools/trackgen/easymesh.cpp	/^    int new_numb;         \/* used for renumeration *\/$/;"	m	struct:ele	file:
 new_numb	tools/trackgen/easymesh.cpp	/^    int new_numb;         \/* used for renumeration *\/$/;"	m	struct:sid	file:
 new_numb	tools/trackgen/easymesh.h	/^    int new_numb;         \/* used for renumeration *\/$/;"	m	struct:nod
+newrace	drivers/andypassion/andypassion.cpp	/^newrace(int index, tCarElt* car, tSituation *s) $/;"	f	file:
 newrace	drivers/human/human.cpp	/^void newrace(int index, tCarElt* car, tSituation *s)$/;"	f
 newrace	drivers/inferno2/inferno2.cpp	/^void newrace(int index, tCarElt* car, tSituation *s)$/;"	f
 next	interfaces/car.h	/^    struct CarElt	*next;$/;"	m	struct:CarElt	typeref:struct:CarElt::CarElt
@@ -18107,6 +18122,7 @@ shiftThld	drivers/human/human.h	/^	tdble	shiftThld[MAX_GEARS+1];$/;"	m	struct:Hu
 shiftThld	drivers/inferno2/inferno2.cpp	/^tdble	shiftThld[10][MAX_GEARS+1];$/;"	v
 shininess	windows/include/plib/ssg.h	/^  float  shininess ;$/;"	m	class:ssgSimpleState
 shutdn	drivers/inferno2/inferno2.cpp	/^shutdn(int index)$/;"	f	file:
+shutdown	drivers/andypassion/andypassion.cpp	/^shutdown(int index)$/;"	f	file:
 shutdown	drivers/berniw/berniw.cpp	/^static void shutdown(int index) {$/;"	f	file:
 shutdown	drivers/berniw2/berniw2.cpp	/^static void shutdown(int index) {$/;"	f	file:
 shutdown	drivers/berniw3/berniw3.cpp	/^static void shutdown(int index) {$/;"	f	file:
@@ -18413,6 +18429,8 @@ sqr	drivers/tita/berniw.h	/^inline double sqr(double x)$/;"	f
 sqr	drivers/tita/pathfinder.h	/^		inline double sqr(const double a) const { return a*a; };$/;"	f	class:Pathfinder
 sqr	drivers/tita/trackdesc.h	/^		inline double sqr(double a) const { return a*a; }$/;"	f	class:TrackSegment
 sqr	drivers/tita/trackdesc.h	/^		inline double sqr(double a) const { return a*a; }$/;"	f	class:TrackSegment2D
+src-robots-andypassion_PKGDIR	drivers/andypassion/Makefile	/^src-robots-andypassion_PKGDIR   = ${PACKAGE}-${VERSION}\/$(subst ${TORCS_BASE},,$(shell pwd))$/;"	m
+src-robots-andypassion_PKGFILES	drivers/andypassion/Makefile	/^src-robots-andypassion_PKGFILES = $(shell find * -maxdepth 0 -type f -print)$/;"	m
 src-robots-base_PKGDIR	drivers/berniw/1/Makefile	/^src-robots-base_PKGDIR	= ${PACKAGE}-${VERSION}\/$(subst ${TORCS_BASE},,$(shell pwd))$/;"	m
 src-robots-base_PKGDIR	drivers/berniw/10/Makefile	/^src-robots-base_PKGDIR	= ${PACKAGE}-${VERSION}\/$(subst ${TORCS_BASE},,$(shell pwd))$/;"	m
 src-robots-base_PKGDIR	drivers/berniw/2/Makefile	/^src-robots-base_PKGDIR	= ${PACKAGE}-${VERSION}\/$(subst ${TORCS_BASE},,$(shell pwd))$/;"	m

@@ -55,7 +55,7 @@ GfuiHelpScreen(void *prevScreen)
     scrHandle = GfuiScreenCreate();
     
     GfuiLabelCreateEx(scrHandle,
-		      "Keys Definition",
+		      "Keys Definition Andypassion",
 		      fgColor2,
 		      GFUI_FONT_BIG,
 		      320,

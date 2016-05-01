@@ -31,15 +31,21 @@
 #include <robottools.h>
 #include <robot.h>
 
-static tTrack	*curTrack;
+#include "driver.h"
+
+#define BUFSIZE 40
+#define NBBOTS 3
+
+static char * botname[NBBOTS];
+static Driver *driver[NBBOTS];
 
 static void initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSituation *s); 
 static void newrace(int index, tCarElt* car, tSituation *s); 
 static void drive(int index, tCarElt* car, tSituation *s); 
 static void endrace(int index, tCarElt *car, tSituation *s);
+static int  pitcmd(int index, tCarElt* car, tSituation *s);
 static void shutdown(int index);
 static int  InitFuncPt(int index, void *pt); 
-
 
 /* 
  * Module entry point  
@@ -47,14 +53,23 @@ static int  InitFuncPt(int index, void *pt);
 extern "C" int 
 andypassion(tModInfo *modInfo) 
 {
+    char buffer[BUFSIZE];
+    int i;
+
     memset(modInfo, 0, 10*sizeof(tModInfo));
 
-    modInfo->name    = "andypassion";		/* name of the module (short) */
-    modInfo->desc    = "";	/* description of the module (can be long) */
-    modInfo->fctInit = InitFuncPt;		/* init function */
-    modInfo->gfId    = ROB_IDENT;		/* supported framework version */
-    modInfo->index   = 1;
+    /* clear all structures */
+    memset(modInfo, 0, 10*sizeof(tModInfo));
 
+    for (i = 0; i < NBBOTS; i++) {
+         sprintf(buffer, "andypassion %d", i+1);
+         botname[i] = strdup(buffer);      /* store pointer */
+         modInfo[i].name    = botname[i];  /* name of the module (short) */
+         modInfo[i].desc    = "";          /* description of the module */
+         modInfo[i].fctInit = InitFuncPt;  /* init function */
+         modInfo[i].gfId    = ROB_IDENT;   /* supported framework version */
+         modInfo[i].index   = i;           /* indices from 0 to 9 */
+    }
     return 0; 
 } 
 
@@ -64,11 +79,14 @@ InitFuncPt(int index, void *pt)
 { 
     tRobotItf *itf  = (tRobotItf *)pt; 
 
+    /* create robot instance for index */
+    driver[index] = new Driver(index);
+
     itf->rbNewTrack = initTrack; /* Give the robot the track view called */ 
 				 /* for every track change or new race */ 
     itf->rbNewRace  = newrace; 	 /* Start a new race */
     itf->rbDrive    = drive;	 /* Drive during race */
-    itf->rbPitCmd   = NULL;
+    itf->rbPitCmd   = pitcmd;    /* Pit commands */
     itf->rbEndRace  = endrace;	 /* End of the current race */
     itf->rbShutdown = shutdown;	 /* Called before the module is unloaded */
     itf->index      = index; 	 /* Index used if multiple interfaces */
@@ -79,41 +97,41 @@ InitFuncPt(int index, void *pt)
 static void  
 initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSituation *s) 
 { 
-    curTrack = track;
-    *carParmHandle = NULL; 
+    driver[index]->initTrack(track, carHandle, carParmHandle, s);
 } 
 
 /* Start a new race. */
 static void  
 newrace(int index, tCarElt* car, tSituation *s) 
 { 
+    driver[index]->newRace(car, s);
 } 
 
 /* Drive during race. */
 static void  
 drive(int index, tCarElt* car, tSituation *s) 
 { 
-    memset((void *)&car->ctrl, 0, sizeof(tCarCtrl)); 
-    car->ctrl.brakeCmd = 1.0; /* all brakes on ... */ 
-    /*  
-     * add the driving code here to modify the 
-     * car->_steerCmd 
-     * car->_accelCmd 
-     * car->_brakeCmd 
-     * car->_gearCmd 
-     * car->_clutchCmd 
-     */ 
+    driver[index]->drive(car, s);
+}
+
+/* Pitstop callback */
+static int pitcmd(int index, tCarElt* car, tSituation *s)
+{
+    return driver[index]->pitCommand(car, s);
 }
 
 /* End of the current race */
 static void
 endrace(int index, tCarElt *car, tSituation *s)
 {
+    driver[index]->endRace(car, s);
 }
 
 /* Called before the module is unloaded */
 static void
 shutdown(int index)
 {
+    free(botname[index]);
+    delete driver[index];
 }
 

@@ -14,18 +14,46 @@
 <params name="andypassion" type="robotdef">
   <section name="Robots">
     <section name="index">
-      <section name="1">
-	<attstr name="name" val="andypassion"></attstr>
+       
+      <section name="0">
+	<attstr name="name" val="andypassion 1"></attstr>
 	<attstr name="desc" val=""></attstr>
 	<attstr name="team" val=""></attstr>
 	<attstr name="author" val="Xiao Zhang"></attstr>
 	<attstr name="car name" val="acura-nsx-sz"></attstr>
 	<attstr name="category" val="Track-RWD-GrB"></attstr>
-	<attnum name="race number" val="0"></attnum>
+	<attnum name="race number" val="11"></attnum>
 	<attnum name="red" val="1.0"></attnum>
 	<attnum name="green" val="1.0"></attnum>
 	<attnum name="blue" val="1.0"></attnum>
       </section>
+
+      <section name="1">
+	<attstr name="name" val="andypassion 2"></attstr>
+	<attstr name="desc" val=""></attstr>
+	<attstr name="team" val=""></attstr>
+	<attstr name="author" val="Xiao Zhang"></attstr>
+	<attstr name="car name" val="kc-corvette-ttop"></attstr>
+	<attstr name="category" val="Track-RWD-GrB"></attstr>
+	<attnum name="race number" val="12"></attnum>
+	<attnum name="red" val="1.0"></attnum>
+	<attnum name="green" val="1.0"></attnum>
+	<attnum name="blue" val="1.0"></attnum>
+      </section>
+
+      <section name="2">
+	<attstr name="name" val="andypassion 3"></attstr>
+	<attstr name="desc" val=""></attstr>
+	<attstr name="team" val=""></attstr>
+	<attstr name="author" val="Xiao Zhang"></attstr>
+	<attstr name="car name" val="pw-focuswrc"></attstr>
+	<attstr name="category" val="Track-RWD-GrB"></attstr>
+	<attnum name="race number" val="13"></attnum>
+	<attnum name="red" val="1.0"></attnum>
+	<attnum name="green" val="1.0"></attnum>
+	<attnum name="blue" val="1.0"></attnum>
+      </section>
+
     </section>
   </section>
 </params>
